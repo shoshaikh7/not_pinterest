@@ -6,6 +6,19 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    - flash.each do |message_type, message|
-      = content_tag :div, message, class: "alert alert-info"
-    = yield
+    %nav.navbar.navbar-default
+      .container-fluid
+        .navbar-brand= link_to "Not Pinterest", root_path
+        - if user_signed_in?
+          %ul.nav.navbar-nav.navbar-right
+            %li= link_to "New Pin", new_pin_path
+            %li= link_to "My Account", edit_user_registration_path
+            %li= link_to "Sign Out", destroy_user_session_path, method: :delete
+        - else
+          %ul.nav.navbar-nav.navbar-right
+            %li= link_to "Sign Up", new_user_registration_path
+            %li= link_to "Sign In", new_user_session_path
+    .container
+      - flash.each do |message_type, message|
+        = content_tag :div, message, class: "alert alert-info"
+      = yield
