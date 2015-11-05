@@ -8,11 +8,12 @@ class PinsController < ApplicationController
   end
 
   def new
-    @pin = Pin.new
+    # Builds pin from the current user, so when a user makes a pin, the pin will have its user_id automatically
+    @pin = current_user.pins.build
   end
 
   def create
-    @pin = Pin.new pin_params
+    @pin = current_user.pins.build pin_params
     if @pin.save
       flash.notice = "New Pin, #{@pin.title}, Created!"
       redirect_to @pin
