@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20151105153045) do
   create_table "pins", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
+    t.integer  "users_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
