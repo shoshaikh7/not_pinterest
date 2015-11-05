@@ -6,8 +6,9 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %nav.navbar.navbar-default
-      .container-fluid
+    %nav.navbar.navbar-default.navbar-fixed-top
+      -# Turn any fixed-width grid layout into a full-width layout by changing your outermost with container or container-fluid
+      .container
         .navbar-brand= link_to "Not Pinterest", root_path
         - if user_signed_in?
           %ul.nav.navbar-nav.navbar-right

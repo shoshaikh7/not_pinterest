@@ -15,4 +15,8 @@
     = f.label :description
     = f.text_area :description, {class: 'form-control'}
 
+  .form-group
+    = f.label :image, "Upload New Image"
+    = f.file_field :image, {class: 'form-control'}
+
   = f.submit class: "btn btn-primary"
