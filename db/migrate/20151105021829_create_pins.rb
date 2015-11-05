@@ -3,7 +3,7 @@ class CreatePins < ActiveRecord::Migration
     create_table :pins do |t|
       t.string :title
       t.text :description
-      t.references :users
+      t.integer :user_id, index: true, foreign_key: true
 
       t.timestamps null: false
     end

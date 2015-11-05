@@ -19,10 +19,12 @@ ActiveRecord::Schema.define(version: 20151105153045) do
   create_table "pins", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "users_id"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  add_index "pins", ["user_id"], name: "index_pins_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
