@@ -1,0 +1,18 @@
+= form_for @pin, html: { multipart: true} do |f|
+  - if @pin.errors.any?
+    #errors
+      %h2
+      = pluralize(@pin.errors.count, "error")
+      Pin Did Not Save
+      %ul
+        - @pin.errors.full_messages.each do |message|
+          %li= message
+  .form-group
+    = f.label :title
+    = f.text_field :title, {class: 'form-control'}
+
+  .form-group
+    = f.label :description
+    = f.text_area :description, {class: 'form-control'}
+
+  = f.submit class: "btn btn-primary"

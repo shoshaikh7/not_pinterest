@@ -26,8 +26,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml', '~> 4.0', '>= 4.0.7'
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.5.1'
-# Simple Form
-gem 'simple_form', '~> 3.2'
 # Devise
 gem 'devise', '~> 3.5', '>= 3.5.2'
 # Paperclip
