@@ -32,6 +32,8 @@ gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'paperclip', '~> 4.3', '>= 4.3.1'
 # Friendly ID
 gem 'friendly_id', '~> 5.1'
+# Masonry
+gem 'masonry-rails', '~> 0.2.4'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
