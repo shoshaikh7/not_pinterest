@@ -14,6 +14,14 @@
             = @pin.user.email
           .col-md-6
             .btn-group.pull-right
+              -# = link_to "upvote", like_link_path(link), method: :put
+              = link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do
+                %span.glyphicon.glyphicon-arrow-up
+                  = @pin.get_upvotes.size
+              = link_to dislike_pin_path(@pin), method: :put, class: "btn btn-default" do
+                %span.glyphicon.glyphicon-arrow-down
+                  = @pin.get_downvotes.size
+              -# = @pin.get_upvotes.size - @pin.get_downvotes.size
               -# <%= link_to "Back", root_path %>
               = link_to "Edit", edit_pin_path, class: "btn btn-default"
               = link_to "Delete", pin_path, class: "btn btn-default", method: :delete, data: {confirm: "Do you really want to delete this pin?"}

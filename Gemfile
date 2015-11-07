@@ -34,6 +34,8 @@ gem 'paperclip', '~> 4.3', '>= 4.3.1'
 gem 'friendly_id', '~> 5.1'
 # Masonry
 gem 'masonry-rails', '~> 0.2.4'
+# Acts As Votable
+gem 'acts_as_votable', '~> 0.10.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
