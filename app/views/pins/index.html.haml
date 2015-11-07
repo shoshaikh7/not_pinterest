@@ -2,9 +2,12 @@
   - @pins.each do |pin|
     .box.panel.panel-default
       -# link_to image_tag imageLocation, link you want to go to when clicked
-      = link_to (image_tag pin.image.url)
+      = link_to (image_tag pin.image.url), pin
       .panel-body
         %h2= link_to pin.title, pin
         %hr
         %p= pin.description
         %hr
+        %p
+        Pinned by
+        = pin.user.email
