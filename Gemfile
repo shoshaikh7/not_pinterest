@@ -22,6 +22,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
 # Haml
 gem 'haml', '~> 4.0', '>= 4.0.7'
 # Bootstrap
@@ -36,6 +37,8 @@ gem 'friendly_id', '~> 5.1'
 gem 'masonry-rails', '~> 0.2.4'
 # Acts As Votable
 gem 'acts_as_votable', '~> 0.10.0'
+# Acts As Taggable
+gem 'acts-as-taggable-on', '~> 3.5'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

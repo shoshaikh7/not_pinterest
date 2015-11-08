@@ -10,6 +10,14 @@
         .row
           .col-md-6
             %p
+            Tags:
+            - if @pin.tags.any?
+              - @pin.tags.each do |tag|
+                = link_to tag.name, tag_path(:tag => tag.name)
+        %hr
+        .row
+          .col-md-6
+            %p
             Pinned by
             = @pin.user.email
           .col-md-6

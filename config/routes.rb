@@ -10,5 +10,7 @@ Rails.application.routes.draw do
       put "dislike", to: "pins#downvote"
     end
   end
+  # Uses same name route as the tag
+  get 'tags/:tag', to: 'pins#tagged', as: :tag
   root 'pins#index'
 end

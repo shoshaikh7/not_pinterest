@@ -3,6 +3,7 @@ class PinsController < ApplicationController
 
   def index
     @pins = Pin.all.order("created_at DESC")
+    @tags = Pin.tag_counts_on(:tags)
   end
 
   def show
@@ -60,9 +61,18 @@ class PinsController < ApplicationController
     redirect_to :back
   end
 
+  def tagged
+    # Tag_list returns an array of tags
+    if params[:tag].present?
+      @pins = Pin.tagged_with(params[:tag])
+    else
+      @pins = Pin.all.order("created_at DESC")
+    end
+  end
+
   private
 
   def pin_params
-    params.require(:pin).permit(:title, :description, :image)
+    params.require(:pin).permit(:title, :description, :image, :tag_list)
   end
 end
