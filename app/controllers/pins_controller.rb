@@ -7,6 +7,8 @@ class PinsController < ApplicationController
 
   def show
     @pin = Pin.find params[:id]
+    @comment = Comment.new
+    @comment.pin_id = @pin.id
   end
 
   def new

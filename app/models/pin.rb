@@ -1,5 +1,6 @@
 class Pin < ActiveRecord::Base
   belongs_to :user
+  has_many :comments
 
   acts_as_votable
     # upvote_by ..... => Add upvote by current_user

@@ -69,12 +69,8 @@ nav {
 }
 
 // Pin Show
-#pin .panel{
-  border-radius: 27px;
-}
-
-#pin .panel-heading {
-  padding: 0;
+.pin-image {
+  padding: 0px;
 }
 
 .pin-image img{
@@ -83,4 +79,23 @@ nav {
   height: auto;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
+}
+
+.comments {
+  margin-top: 20px;
+}
+
+.comments .panel-heading h5{
+  font-size: 300px;
+  display: inline-block
+}
+
+.comments .panel-heading h6 {
+  display: inline-block;
+}
+
+.comment-form {
+  border: 2px solid #D3D3D3;
+  border-radius: 7px;
+  padding: 15px;
 }
