@@ -7,7 +7,7 @@ class PinsController < ApplicationController
   end
 
   def show
-    @pin = Pin.find params[:id]
+    @pin = Pin.friendly.find params[:id]
     @comment = Comment.new
     @comment.pin_id = @pin.id
   end
@@ -28,11 +28,11 @@ class PinsController < ApplicationController
   end
 
   def edit
-    @pin = Pin.find params[:id]
+    @pin = Pin.friendly.find params[:id]
   end
 
   def update
-    @pin = Pin.find params[:id]
+    @pin = Pin.friendly.find params[:id]
     if @pin.update pin_params
       flash.notice = "#{@pin.title} Updated!"
       redirect_to @pin
@@ -42,21 +42,21 @@ class PinsController < ApplicationController
   end
 
   def destroy
-    @pin = Pin.find params[:id]
+    @pin = Pin.friendly.find params[:id]
     @pin.destroy
     flash.notice = "#{@pin.title} Deleted!"
     redirect_to root_path
   end
 
   def upvote
-    @pin = Pin.find params[:id]
+    @pin = Pin.friendly.find params[:id]
     # We get .upvote_by because we added acts_as_votable to pin model
     @pin.upvote_by current_user
     redirect_to :back
   end
 
   def downvote
-    @pin = Pin.find params[:id]
+    @pin = Pin.friendly.find params[:id]
     @pin.downvote_by current_user
     redirect_to :back
   end
@@ -73,6 +73,6 @@ class PinsController < ApplicationController
   private
 
   def pin_params
-    params.require(:pin).permit(:title, :description, :image, :tag_list)
+    params.require(:pin).permit(:title, :description, :image, :tag_list, :slug)
   end
 end
